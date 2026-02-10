@@ -5,7 +5,7 @@ export class Users {
     @Prop({required: true, unique: true})
     username: string
 
-    @Prop()
+    @Prop({unique: true})
     displayname: string
 
     @Prop()
