@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UsersModule } from './users/users.module';
+import { PostsModule } from './posts/posts.module';
 @Module({
   imports: [
     UsersModule,
@@ -15,7 +16,7 @@ import { UsersModule } from './users/users.module';
     useFactory: (config: ConfigService) => ({
       uri: config.get('CONNECTION_STRING')
     })
-  })],
+  }), PostsModule],
   controllers: [AppController],
   providers: [AppService],
 })
